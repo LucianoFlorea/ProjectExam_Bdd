@@ -1,6 +1,6 @@
 Feature: Test add to cart functionality
 
-  Scenario Outline: add to cart Sauce Labs Bike Light
+  Scenario Outline: Add to cart
     Given I am logged into the app
     When I click Add to chart button to the item "<item>"
     Then The Remove button is displayed for the item "<item>"

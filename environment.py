@@ -9,5 +9,6 @@ def before_all(context):
     context.inventory_page = Inventory_page()
 
 
+
 def after_all(context):
     context.browser.close()
