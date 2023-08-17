@@ -10,7 +10,7 @@ Feature: Verify Pricing Information
     When I go to the product page for "<item2>"
     Then I should see the price of the "<item2>"
     Examples:
-    |item2                           |
+    |item2                        |
     |Sauce Labs Backpack             |
     |Sauce Labs Bike Light           |
     |Sauce Labs Bolt T-Shirt         |
