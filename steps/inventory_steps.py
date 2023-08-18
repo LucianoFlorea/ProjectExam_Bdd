@@ -19,8 +19,6 @@ def step_impl(context, item):
     context.inventory_page.check_remove_button_is_present(item)
 
 
-# ----------------------------------------------------------------------------------------
-
 @when('I check the basket page')
 def step_impl(context):
     context.inventory_page.check_basket_page()

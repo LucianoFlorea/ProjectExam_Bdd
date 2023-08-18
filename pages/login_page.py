@@ -8,6 +8,7 @@ class Login_page(base_page.BasePage):
     PASSWORD = (By.ID, "password")
     LOGIN_BTN = (By.ID, "login-button")
     ERROR_MSG = (By.XPATH, "//h3[@data-test='error']")
+    LOGO = (By.CLASS_NAME, "login_logo")
 
     def open_login_page(self):
         self.chrome.get("https://www.saucedemo.com/")
@@ -28,6 +29,9 @@ class Login_page(base_page.BasePage):
         error_message = "error: the failed login message is not displayed"
         self.check_error_message(self.ERROR_MSG, expected_result, error_message)
 
+    def verify_Logo(self):
+        status = self.chrome.find_element(*self.LOGO).is_displayed()
+        assert status is True
 
 
 

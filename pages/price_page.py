@@ -2,11 +2,9 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from base_page import BasePage
 from selenium.webdriver.support.ui import WebDriverWait
-from pages.login_page import Login_page
-from pages.inventory_page import Inventory_page
+
 
 class Price_page(BasePage):
-
     items2 = ["Sauce Labs Backpack", "Sauce Labs Bike Light", "Sauce Labs Bolt T-Shirt", "Sauce Labs Fleece Jacket",
               "Sauce Labs Onesie", "Test.allTheThings() T-Shirt (Red)"]
     PRODUCT_NAMES_LOCATOR = (By.CLASS_NAME, 'inventory_item_name')
@@ -51,8 +49,7 @@ class Price_page(BasePage):
             'Sauce Labs Fleece Jacket': '$49.99',
             'Sauce Labs Onesie': '$7.99',
             'Test.allTheThings() T-Shirt (Red)': '$15.99',
-            # Add other product names and their expected prices here
-        }
+            }
 
         # Return the expected price for the given product name
         return expected_prices.get(product_name,
