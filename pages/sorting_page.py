@@ -11,6 +11,8 @@ class Sorting_page(BasePage):
     DROPDOWN_ZA_OPTION = (By.CSS_SELECTOR, "option[value='za']")
     DROPDOWN_LO_HI_OPTION = (By.CSS_SELECTOR, "option[value='lohi']")
     DROPDOWN_HI_LO_OPTION = (By.CSS_SELECTOR, "option[value='hilo']")
+    # PRODUCTS_BY_PRICE = (By.XPATH,f"//div[@class='inventory_item'][{item_index}]//div[@class='inventory_item_price']")
+    # PRODUCTS_BY_NAME = (By.XPATH,f"//div[@class='inventory_item'][{item_index}]//div[@class='inventory_item_name']/a/div")
 
     def sort_a_to_z(self):
         self.chrome.find_element(*self.SORT_DROPDOWN).click()
@@ -29,7 +31,8 @@ class Sorting_page(BasePage):
         self.chrome.find_element(*self.DROPDOWN_HI_LO_OPTION).click()
 
     def products_by_price(self, item_index=1):
-        return self.chrome.find_element(By.XPATH,"/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div["+ str(item_index) +"]/div[3]/div[1]")
+        xpath_price = f"//div[@class='inventory_list']//div[{item_index}]//div[2]//div[2]//div[1]"
+        return self.chrome.find_element(By.XPATH, xpath_price)
 
     def verify_first_price_higher_than_second_price(self):
         first_price = Decimal(self.products_by_price(1).text[1:])
@@ -42,8 +45,8 @@ class Sorting_page(BasePage):
         assert first_price <= second_price, "Error: first price is not lower than second"
 
     def products_by_name(self, item_index=1):
-        return self.chrome.find_element(By.XPATH,"/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div["+ str(item_index) +"]/div[2]/a[1]/div[1]")
-
+        xpath_name = f"//div[@class='inventory_list']//div[{item_index}]//div[2]//div[1]//a[1]//div[1]"
+        return self.chrome.find_element(By.XPATH, xpath_name)
     def verify_products_in_alphabetical_order(self):
         products_list = []
         first_product = self.products_by_name(1).text
