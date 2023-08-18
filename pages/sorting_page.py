@@ -11,8 +11,6 @@ class Sorting_page(BasePage):
     DROPDOWN_ZA_OPTION = (By.CSS_SELECTOR, "option[value='za']")
     DROPDOWN_LO_HI_OPTION = (By.CSS_SELECTOR, "option[value='lohi']")
     DROPDOWN_HI_LO_OPTION = (By.CSS_SELECTOR, "option[value='hilo']")
-    # PRODUCTS_BY_PRICE = (By.XPATH,f"//div[@class='inventory_item'][{item_index}]//div[@class='inventory_item_price']")
-    # PRODUCTS_BY_NAME = (By.XPATH,f"//div[@class='inventory_item'][{item_index}]//div[@class='inventory_item_name']/a/div")
 
     def sort_a_to_z(self):
         self.chrome.find_element(*self.SORT_DROPDOWN).click()
