@@ -1,15 +1,16 @@
 # ProjectExam_Bdd
 Testare site (https://www.saucedemo.com/)
 
-Proiectul are ca scop testarea funcționalității și comportamentului site-ului "saucedemo" prin metoda BDD. Scenariile sunt descrise printr-un limbaj simplu de înțeles folosind sintaxa Gherkin.
+Proiectul are ca scop testarea funcționalității și comportamentului site-ului "saucedemo" prin metoda BDD. 
+Scenariile sunt descrise printr-un limbaj simplu de înțeles folosind sintaxa Gherkin.
 
 Cerințe preliminare:
 
 Instalare Pycharm Community Edition: https://www.jetbrains.com/pycharm/download/
 Instalare Python: https://www.python.org/downloads/
 Instalare Browser Chrome: testele sunt concepute pentru a rula în Chrome.
-Instalare:
 
+Instalare:
 Clonare repository prin introducere comandă în Git Bash: git clone [https://github.com/AndreeaPopa9/ExamProject_BDD](https://github.com/LucianoFlorea/ProjectExam_Bdd.git).
 Instalare librăria Selenium prin introducere în terminal a comenzii: pip install selenium sau sau pip install -U selenium (pentru update la zi)
 Instalare WebDriver prin introducere în terminal a comenzii: pip install webdriver-manager
